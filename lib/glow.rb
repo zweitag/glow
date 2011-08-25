@@ -1,4 +1,4 @@
-require "glow/engine"
+require "glow/railtie"
 
 module Glow
 end
