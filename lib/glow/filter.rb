@@ -8,9 +8,10 @@ module Glow
     end
     module InstanceMethods
       def flash_to_headers
-        return unless request.xhr? && flash.present? # respects Ajax requests only
-        response.headers['X-Message'] = flash_message.unpack('U*').map{ |i| "&##{i};" }.join
-        response.headers['X-Message-Type'] = flash_type
+        return unless flash.any? && request.xhr?
+        type, message = flash.first
+        response.headers['X-Message'] = URI.escape(message) #flash_message.unpack('U*').map{ |i| "&##{i};" }.join
+        response.headers['X-Message-Type'] = type
         flash.discard  # don't want the flash to appear when you reload page
       end
     end
