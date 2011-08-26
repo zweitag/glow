@@ -7,6 +7,7 @@ require "rails/test_help"
 Rails.backtrace_cleaner.remove_silencers!
 
 require 'capybara/rails'
+Capybara.default_driver = :selenium
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
