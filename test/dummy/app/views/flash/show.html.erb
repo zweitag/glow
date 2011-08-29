@@ -1,0 +1,8 @@
+<p id="flash"><%= flash.map { |type, message| message }.join %></p>
+<p><%= link_to 'redirect', action: :create, type: :notice, message: 'utf8: ✓ ' %></p>
+<p><%= link_to 'rails ajax', {action: :create, type: :notice, message: 'utf8: ✓ '}, remote: true %></p>
+<p><%= link_to 'ajax', '#', id: 'ajax' %></p>
+
+<script type="application/javascript">
+  $('#ajax').click(function(){$.get('<%= url_for action: :create, type: :notice, message: 'utf8: ✓ ', format: :js %>'); return false;});
+</script>
