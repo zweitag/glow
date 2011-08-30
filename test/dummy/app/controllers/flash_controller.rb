@@ -3,11 +3,16 @@ class FlashController < ApplicationController
     # show.html.erb
   end
 
-  def create
+  def redirect
     flash[params[:type]] = params[:message]
+    redirect_to action: 'show'
+  end
+
+  def ajax
     respond_to do |wants|
-      wants.html { redirect_to action: 'show' }
-      wants.js # create.js.erb
+      wants.js {
+        flash[params[:type]] = params[:message]
+      }
     end
   end
 end

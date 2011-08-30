@@ -9,14 +9,14 @@ end
 
 describe FlashController do
   it "should display flash message on redirect" do
-    post :create, type: :notice, message: 'Glow!'
+    post :redirect, type: :notice, message: 'Glow!'
 
     flash[:notice].should be == 'Glow!'
     flash.keep?(:notice).should be true
   end
 
   it "should display flash message on xhr" do 
-    xhr :post, :create, type: :notice, message: 'Glow!'
+    xhr :get, :ajax, type: :notice, message: 'Glow!'
 
     flash[:notice].should be == 'Glow!'
     flash.discard?(:notice).should be true
@@ -26,7 +26,7 @@ describe FlashController do
   end
 
   it "should handle unicode on xhr" do
-    xhr :post, :create, type: :notice, message: 'utf8: ✓'
+    xhr :get, :ajax, type: :notice, message: 'utf8: ✓'
     @response.headers['X-Message-Type'].should be(:notice)
     HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'utf8: ✓'
   end
