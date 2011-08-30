@@ -31,9 +31,9 @@ Also adds a `Flash` object that enables you to fire `glow:flash`.
 This can be used to unify your Flash message handling (also in non-xhr
 responses).
 
-  <% flash.each |type, message| %>
-    <%= javascript_tag "Flash.fire('#{type}', '#{message}')" %>
-  <% end %>
+    <% flash.each |type, message| %>
+      <%= javascript_tag "Flash.fire('#{type}', '#{message}')" %>
+    <% end %>
 
 ## Installation
 
