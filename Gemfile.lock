@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    glow (0.0.1)
+    glow (0.0.2)
       jquery-rails
       rails (~> 3.0.0)
 
@@ -70,7 +70,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.4)
     rake (0.9.2)
-    rdoc (3.9.3)
+    rdoc (3.9.4)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
