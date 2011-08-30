@@ -1,6 +1,6 @@
 require 'rails'
 
-module Jquery
+module Glow
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
 
@@ -11,7 +11,7 @@ module Jquery
       def copy_glow
         say_status("copying", "glow", :green)
         copy_file "glow.js", "public/javascripts/glow.js"
-        say_status("Please include glow.js in your layout", :green)
+        say("Please include glow.js in your layout")
       end
 
     end

@@ -1,3 +1,5 @@
 = Glow
 
+rails generate glow:install
+
 This project rocks and uses MIT-LICENSE.
