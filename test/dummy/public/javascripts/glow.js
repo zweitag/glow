@@ -1,11 +1,4 @@
 (function() {
-  $(document).ajaxComplete(function(evt, xhr, options) {
-    $('body').append(xhr.getResponseHeader('X-Message'));
-    return $(document).trigger('glow:flash', {
-      type: xhr.getResponseHeader('X-Message-Type'),
-      message: xhr.getResponseHeader('X-Message')
-    });
-  });
   window.Glow = {
     flash: function(type, message) {
       return $(document).trigger('glow:flash', {
@@ -14,6 +7,13 @@
       });
     }
   };
+  $(document).ajaxComplete(function(evt, xhr, options) {
+    var message, type;
+    $('body').append(xhr.getResponseHeader('X-Message'));
+    if (type = xhr.getResponseHeader('X-Message-Type') && (message = xhr.getResponseHeader('X-Message'))) {
+      return Glow.flash(type, message);
+    }
+  });
   window.Flash = {
     fire: Glow.flash,
     success: function(message) {

@@ -1,9 +1,9 @@
-$(document).ajaxComplete (evt, xhr, options) ->
-  $('body').append(xhr.getResponseHeader('X-Message'))
-  $(document).trigger 'glow:flash', type: xhr.getResponseHeader('X-Message-Type'), message: xhr.getResponseHeader('X-Message')
-
 window.Glow =
   flash: (type, message) -> $(document).trigger 'glow:flash', { type, message }
+
+$(document).ajaxComplete (evt, xhr, options) ->
+  $('body').append(xhr.getResponseHeader('X-Message'))
+  Glow.flash type, message if type = xhr.getResponseHeader('X-Message-Type') and message = xhr.getResponseHeader('X-Message')
 
 window.Flash =
   fire: Glow.flash
