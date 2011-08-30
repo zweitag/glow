@@ -21,13 +21,13 @@ describe FlashController do
     flash[:notice].should be == 'Glow!'
     flash.discard?(:notice).should be true
 
-    @response.headers['X-Message-Type'].should be(:notice)
+    @response.headers['X-Message-Type'].should be == 'notice'
     HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'Glow!'
   end
 
   it "should handle unicode on xhr" do
     xhr :get, :ajax, type: :notice, message: 'utf8: ✓'
-    @response.headers['X-Message-Type'].should be(:notice)
+    @response.headers['X-Message-Type'].should be == 'notice'
     HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'utf8: ✓'
   end
 end
