@@ -9,7 +9,6 @@
   };
   $(document).ajaxComplete(function(evt, xhr, options) {
     var message, type;
-    $('body').append(xhr.getResponseHeader('X-Message'));
     if (type = xhr.getResponseHeader('X-Message-Type') && (message = xhr.getResponseHeader('X-Message'))) {
       return Glow.flash(type, message);
     }
