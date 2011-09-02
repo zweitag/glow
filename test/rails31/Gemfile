@@ -15,7 +15,12 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'glow', path: '../..'
+
 gem 'jquery-rails'
+gem 'rspec-rails'
+gem 'capybara'
+gem 'htmlentities'
 
 # Use unicorn as the web server
 # gem 'unicorn'
