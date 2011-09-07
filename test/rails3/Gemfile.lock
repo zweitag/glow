@@ -1,9 +1,9 @@
 PATH
   remote: ../..
   specs:
-    glow (0.0.1)
+    glow (0.0.3)
       jquery-rails
-      rails (~> 3.0.0)
+      rails (>= 3.0.0, < 3.2.0)
 
 GEM
   remote: http://rubygems.org/
