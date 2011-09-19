@@ -21,3 +21,7 @@ RDoc::Task.new(:rdoc) do |rdoc|
 end
 
 Bundler::GemHelper.install_tasks
+
+task :compile do
+  sh 'coffee -co vendor/assets/javascripts src/glow.coffee'
+end
