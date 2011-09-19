@@ -1,5 +1,6 @@
 require 'glow/filter'
-require 'action_controller/base'
+require 'rails/engine'
+require 'action_controller'
 
 module Glow
   class Engine < Rails::Engine
