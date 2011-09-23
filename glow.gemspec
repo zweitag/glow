@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
     Handles Flash messages in Javascript for Rails xhr-responses. Fires a dom event when flash messages are present.
   DESC
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.rdoc_options = ['--main', 'README.md', '--charset=UTF-8']
