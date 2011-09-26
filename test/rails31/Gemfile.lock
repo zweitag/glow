@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    glow (0.0.6)
+    glow (0.0.7)
       jquery-rails
       rails (>= 3.0.0, < 3.2.0)
 
