@@ -18,7 +18,7 @@ Handle it any way you want:
     $(document).bind('glow:flash', function(evt, flash) {
       alert(flash.type);
       alert(flash.message);
-    }
+    });
 
 Also adds a `Flash` object that enables you to fire `glow:flash`.
 
@@ -57,7 +57,11 @@ to your layout.
 
 ### Rails 3.1
 
-TODO
+Add
+
+    //=require glow
+
+to your manifest.
 
 ## License
 
