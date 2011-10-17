@@ -9,7 +9,9 @@
   };
   $(document).ajaxComplete(function(evt, xhr, options) {
     var message, type;
-    if (type = xhr.getResponseHeader('X-Message-Type') && (message = xhr.getResponseHeader('X-Message'))) {
+    type = xhr.getResponseHeader('X-Message-Type');
+    message = xhr.getResponseHeader('X-Message');
+    if (type && message) {
       return Glow.flash(type, message);
     }
   });
