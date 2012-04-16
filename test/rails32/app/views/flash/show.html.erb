@@ -1,0 +1,13 @@
+<script type="application/javascript">
+  // Flash handling
+  $(document).bind('glow:flash', function(evt, flash) { console.log('glow flash'); $('#flash').html(flash.message); });
+</script>
+
+<p id="flash"><%= flash.map { |type, message| message }.join %></p>
+<p><%= link_to 'redirect', action: :redirect, type: :notice, message: 'utf8: ✓ ' %></p>
+<p><%= link_to 'rails ajax', {action: :ajax, type: :notice, message: 'rails ajax: ✓ '}, remote: true %></p>
+<p><%= link_to 'jquery ajax', '#', id: 'ajax' %></p>
+
+<script type="application/javascript">
+  $('#ajax').click(function(){$.get('<%= url_for action: :ajax, type: :notice, message: 'jquery utf8: ✓', format: :js %>'); return false;});
+</script>
