@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'htmlentities'
+gem 'capybara-webkit'
 
 # Use unicorn as the web server
 # gem 'unicorn'
