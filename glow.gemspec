@@ -24,6 +24,6 @@ Gem::Specification.new do |s|
   s.rdoc_options = ['--main', 'README.md', '--charset=UTF-8']
   s.extra_rdoc_files = ['README.md', 'MIT-LICENSE']
 
-  s.add_dependency "rails", ">= 3.0.0", "< 3.2.0"
+  s.add_dependency "rails", ">= 3.0.0", "< 4.0.0"
   s.add_dependency "jquery-rails"
 end
