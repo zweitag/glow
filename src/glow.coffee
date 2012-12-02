@@ -4,7 +4,7 @@ window.Glow =
 $(document).ajaxComplete (evt, xhr, options) ->
   type = xhr.getResponseHeader('X-Message-Type')
   message = xhr.getResponseHeader('X-Message')
-  Glow.flash type, message if type and message
+  Glow.flash type, $('<div/>').html(message).text() if type and message
 
 window.Flash =
   fire: Glow.flash
