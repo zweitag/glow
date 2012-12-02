@@ -5,13 +5,18 @@ describe "the flash view" do
   it "redirects" do
     visit root_path
     click_on 'redirect'
-    page.has_content?('utf8: ✓')
+    page.should have_content('utf8: ✓')
   end
 
-  it "handles ajax" do
+  it "handles rails ajax" do
     visit root_path
-    click_on 'ajax'
-    page.has_content?('ajax: ✓')
+    click_on 'rails ajax'
+    page.should have_content('rails ajax: ✓')
+  end
+
+  it "handles jquery ajax" do
+    visit root_path
+    click_on 'jquery ajax'
+    page.should have_content('jquery ajax: ✓')
   end
 end
-

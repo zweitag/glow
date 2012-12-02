@@ -12,6 +12,7 @@ class FlashController < ApplicationController
     respond_to do |wants|
       wants.js {
         flash[params[:type]] = params[:message]
+        head :ok
       }
     end
   end
