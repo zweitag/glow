@@ -22,6 +22,7 @@ end
 
 Bundler::GemHelper.install_tasks
 
+desc 'compile glow.coffee to .js'
 task :compile do
   sh 'coffee -co vendor/assets/javascripts src/glow.coffee'
 end
