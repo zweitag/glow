@@ -12,6 +12,7 @@ class FlashController < ApplicationController
     respond_to do |wants|
       wants.js {
         flash[params[:type]] = params[:message]
+        flash[:skip_glow] = params[:skip_glow].present?
         head :ok
       }
     end
