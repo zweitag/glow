@@ -30,4 +30,9 @@ describe FlashController do
     @response.headers['X-Message-Type'].should be == 'notice'
     HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'utf8: ✓'
   end
+
+  it "should not display flash message on xhr when skip_glow is set" do
+    xhr :get, :ajax, type: :notice, message: 'utf8: ✓', skip_glow: true
+    @response.headers.should_not have_key 'X-Message-Type'
+  end
 end
