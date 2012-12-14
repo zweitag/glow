@@ -35,6 +35,8 @@ responses).
       <%= javascript_tag "Flash.fire('#{type}', '#{message}')" %>
     <% end %>
 
+If you want to skip the glow after_filter just set `flash[:skip_glow]`.
+
 ## Installation
 
 In your gemfile add
