@@ -8,17 +8,21 @@ Fash Hash in Javascript. Depends on jQuery.
 Any flash messages set in ajax responses fire a `glow:flash`
 event on `document`.
 
-    flash[:notice] = 'Ajax man!'
-    respond_to do |format|
-      format.js { head :ok }
-    end
+```ruby
+flash[:notice] = 'Ajax man!'
+respond_to do |format|
+  format.js { head :ok }
+end
+```
 
 Handle it any way you want:
 
-    $(document).bind('glow:flash', function(evt, flash) {
-      alert(flash.type);
-      alert(flash.message);
-    });
+```javascript
+$(document).bind('glow:flash', function(evt, flash) {
+  alert(flash.type);
+  alert(flash.message);
+});
+```
 
 Also adds a `Flash` object that enables you to fire `glow:flash`.
 
