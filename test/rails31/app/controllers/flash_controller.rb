@@ -1,4 +1,7 @@
 class FlashController < ApplicationController
+
+  headerize_flash_for :json
+
   def show
     # show.html.erb
   end
@@ -10,11 +13,13 @@ class FlashController < ApplicationController
 
   def ajax
     respond_to do |wants|
-      wants.js {
-        flash[params[:type].to_sym] = params[:message]
-        flash[:skip_glow] = params[:skip_glow].present?
-        head :ok
-      }
+      [:js, :json, :xml].each do |fmt|
+        wants.send(fmt) {
+          flash[params[:type].to_sym] = params[:message]
+          flash[:skip_glow] = params[:skip_glow].present?
+          head :ok
+        }
+      end
     end
   end
 end

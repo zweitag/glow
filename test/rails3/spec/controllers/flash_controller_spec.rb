@@ -15,7 +15,7 @@ describe FlashController do
     flash.keep?(:notice).should be true
   end
 
-  it "should display flash message on xhr" do 
+  it "should display flash message on xhr" do
     xhr :get, :ajax, type: :notice, message: 'Glow!'
 
     flash[:notice].should be == 'Glow!'
@@ -34,5 +34,22 @@ describe FlashController do
   it "should not display flash message on xhr when skip_glow is set" do
     xhr :get, :ajax, type: :notice, message: 'utf8: ✓', skip_glow: true
     @response.headers.should_not have_key 'X-Message-Type'
+  end
+
+  it "should pass flash message on JSON requests" do
+    get :ajax, type: :notice, message: 'Glow!', format: :json
+
+    flash[:notice].should be == 'Glow!'
+    flash.discard?(:notice).should be true
+
+    @response.headers['X-Message-Type'].should be == 'notice'
+    HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'Glow!'
+  end
+
+  it "should not pass flash message on XML requests" do
+    get :ajax, type: :notice, message: 'Glow!', format: :xml
+
+    @response.headers['X-Message-Type'].should be_nil
+    @response.headers['X-Message'].should be_nil
   end
 end
