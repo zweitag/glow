@@ -1,7 +1,9 @@
+Gemfile.lock
 .bundle/
 log/*.log
 pkg/
-test/*/db/*.sqlite3
-test/*/log/*.log
-test/*/tmp/
+spec/*/db/*.sqlite3
+spec/*/log/*.log
+spec/*/tmp/
+spec/dummy/Gemfile.lock
 *.swp

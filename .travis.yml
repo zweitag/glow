@@ -1,0 +1,15 @@
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+env:
+  - "RAILS_VERSION=3.0.0"
+  - "RAILS_VERSION=3.1.0"
+  - "RAILS_VERSION=3.2.0"
+  - "RAILS_VERSION=4.0.0"
+rvm:
+  - 1.9.3
+  - 2.0.0
+matrix:
+  exclude:
+    - rvm: 2.0.0
+      env: "RAILS_VERSION=3.0.0"
