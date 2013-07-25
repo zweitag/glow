@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy</title>
+  <%=
+    #stylesheet_link_tag    "application"
+  %>
+  <% if Rails::VERSION::MAJOR >= 4 %>
+  <%= javascript_include_tag 'application' %>
+  <% else %>
+  <%= javascript_include_tag 'jquery', 'jquery_ujs', 'glow' %>
+  <% end %>
+  <%=
+    #csrf_meta_tags
+  %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
