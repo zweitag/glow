@@ -88,7 +88,7 @@ Then add
 
 to your layout.
 
-### Rails 3.1
+### Rails >=3.1 (including Rails 4)
 
 Add
 
@@ -99,9 +99,3 @@ to your manifest.
 ## License
 
 See MIT-LICENSE.
-
-## TODO
-
-- Test in 3.1
-- Automatically add //= require glow to application.js in 3.1 (via
-  generator)
