@@ -1,7 +1,7 @@
 # Glow
 
 Glowing flashes! Okay... not really. This simply adds handling of the
-Fash Hash in Javascript. Depends on jQuery.
+Flash Hash in Javascript. Depends on jQuery.
 
 ## Usage
 
