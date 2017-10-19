@@ -39,7 +39,7 @@ responses).
       <%= javascript_tag "Flash.fire('#{type}', '#{message}')" %>
     <% end %>
 
-If you want to skip the glow after_filter just set `flash[:skip_glow]`.
+If you want to skip the glow after_action just set `flash[:skip_glow]`.
 
 
 You can also use glow with APIs by using `headerize_flash_for` and passing
