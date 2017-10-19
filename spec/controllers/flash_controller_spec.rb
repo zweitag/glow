@@ -11,7 +11,7 @@ ActionDispatch::Flash::FlashHash.class_eval do
   def keep?(key); !discard?(key); end
 end
 
-describe FlashController do
+describe FlashController, type: :controller do
   it "should display flash message on redirect" do
     post :redirect, type: :notice, message: 'Glow!'
 
