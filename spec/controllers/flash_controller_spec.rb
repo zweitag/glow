@@ -3,11 +3,7 @@ require 'spec_helper'
 require 'htmlentities'
 
 ActionDispatch::Flash::FlashHash.class_eval do
-  if Rails::VERSION::MAJOR == 3
-    def discard?(key); @used.include?(key); end
-  else
-    def discard?(key); @discard.include?(key); end
-  end
+  def discard?(key); @discard.include?(key.to_s); end
   def keep?(key); !discard?(key); end
 end
 
