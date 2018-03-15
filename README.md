@@ -76,25 +76,17 @@ In your gemfile add
 
 .
 
-### Rails 3.0
-
-Run
-
-    rails generate glow:install
-
-Then add
-
-    javascipt_include_tag 'glow'
-
-to your layout.
-
-### Rails >=3.1 (including Rails 4)
+### Rails >= 4
 
 Add
 
     //=require glow
 
 to your manifest.
+
+### Rails 3
+
+Please use [v0.0.14](https://github.com/zweitag/glow/tree/v0.0.14)
 
 ## License
 

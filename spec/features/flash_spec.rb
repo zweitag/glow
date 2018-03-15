@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-describe "the flash view" do
+describe "the flash view", type: :feature do
   it "redirects" do
     visit root_path
     click_on 'redirect'
