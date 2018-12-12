@@ -18,6 +18,7 @@ end
 
 gem "rails", rails
 
+gem 'puma'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'htmlentities'
