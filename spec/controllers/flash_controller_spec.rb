@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'htmlentities'
 
 ActionDispatch::Flash::FlashHash.class_eval do
   def discard?(key); @discard.include?(key.to_s); end
