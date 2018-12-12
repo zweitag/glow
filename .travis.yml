@@ -3,9 +3,8 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 env:
-  - "RAILS_VERSION=5.0.6"
-  - "RAILS_VERSION=5.1.5"
+  - "RAILS_VERSION=5.1.6"
+  - "RAILS_VERSION=5.2.0"
 rvm:
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
+  - 2.4.5
+  - 2.5.3
