@@ -5,6 +5,5 @@ gem 'glow', path: '../..'
 #group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'htmlentities'
   gem 'capybara-webkit'
 #end

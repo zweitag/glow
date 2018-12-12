@@ -21,7 +21,6 @@ gem "rails", rails
 gem 'puma'
 gem 'rspec-rails'
 gem 'capybara'
-gem 'htmlentities'
 gem 'capybara-webkit'
 
 # Declare any dependencies that are still in development here instead of in

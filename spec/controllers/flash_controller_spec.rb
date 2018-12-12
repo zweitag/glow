@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'spec_helper'
-require 'htmlentities'
 
 ActionDispatch::Flash::FlashHash.class_eval do
   def discard?(key); @discard.include?(key.to_s); end
@@ -22,13 +21,13 @@ describe FlashController, type: :controller do
     flash.discard?(:notice).should be true
 
     @response.headers['X-Message-Type'].should be == 'notice'
-    HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'Glow!'
+    URI.decode(@response.headers['X-Message']).should be == 'Glow!'
   end
 
   it "should handle unicode on xhr" do
     get :ajax, params: { type: :notice, message: 'utf8: ✓' }, xhr: true
     @response.headers['X-Message-Type'].should be == 'notice'
-    HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'utf8: ✓'
+    URI.decode(@response.headers['X-Message']).should be == 'utf8: ✓'
   end
 
   it "should not display flash message on xhr when skip_glow is set" do
@@ -43,7 +42,7 @@ describe FlashController, type: :controller do
     flash.discard?(:notice).should be true
 
     @response.headers['X-Message-Type'].should be == 'notice'
-    HTMLEntities.new.decode(@response.headers['X-Message']).should be == 'Glow!'
+    URI.decode(@response.headers['X-Message']).should be == 'Glow!'
   end
 
   it "should not pass flash message on XML requests" do

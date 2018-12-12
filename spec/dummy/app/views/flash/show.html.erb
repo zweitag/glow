@@ -4,10 +4,10 @@
 </script>
 
 <p id="flash"><%= flash.map { |type, message| message }.join %></p>
-<p><%= link_to 'redirect', action: :redirect, type: :notice, message: 'utf8: ✓' %></p>
-<p><%= link_to 'rails ajax', {action: :ajax, type: :notice, message: 'rails ajax: ✓'}, remote: true %></p>
+<p><%= link_to 'redirect', action: :redirect, type: :notice, message: 'utf8: //&= ✓' %></p>
+<p><%= link_to 'rails ajax', {action: :ajax, type: :notice, message: 'rails ajax: //&= ✓'}, remote: true %></p>
 <p><%= link_to 'jquery ajax', '#', id: 'ajax' %></p>
 
 <script type="application/javascript">
-  $('#ajax').click(function(){$.get('<%= url_for action: :ajax, type: :notice, message: 'jquery ajax: ✓', format: :js %>'); return false;});
+  $('#ajax').click(function(){$.get('<%= url_for action: :ajax, type: :notice, message: "jquery ajax: //&= ✓", format: :js %>'); return false;});
 </script>
