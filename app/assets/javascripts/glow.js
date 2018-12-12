@@ -12,9 +12,9 @@
   $(document).ajaxComplete(function(evt, xhr, options) {
     var message, type;
     type = xhr.getResponseHeader('X-Message-Type');
-    message = xhr.getResponseHeader('X-Message');
+    message = decodeURI(xhr.getResponseHeader('X-Message'));
     if (type && message) {
-      return Glow.flash(type, $('<div/>').html(message).text());
+      return Glow.flash(type, message);
     }
   });
 

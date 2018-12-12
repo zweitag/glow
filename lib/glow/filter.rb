@@ -13,7 +13,9 @@ module Glow
       return if flash[:skip_glow] and flash.delete(:skip_glow)
 
       type, message = flash.first
-      response.headers['X-Message'] = message.to_s.unpack('U*').map{ |i| "&##{i};" }.join
+      # Use URI-Encoding to make sure header value is ASCII-only and
+      # we can easily decode this using decodeURI in JavaScript.
+      response.headers['X-Message'] = URI.encode(message.to_s)
         response.headers['X-Message-Type'] = type.to_s
       flash.discard  # don't want the flash to appear when you reload page
     end
