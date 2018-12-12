@@ -84,10 +84,6 @@ Add
 
 to your manifest.
 
-### Rails 3
-
-Please use [v0.0.14](https://github.com/zweitag/glow/tree/v0.0.14)
-
 ## License
 
 See MIT-LICENSE.
