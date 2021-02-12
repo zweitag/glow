@@ -3,6 +3,10 @@
 Glowing flashes! Okay... not really. This simply adds handling of the
 Flash Hash in Javascript. Depends on jQuery.
 
+## CI
+
+The CI travis.com is disabled because of our migration to Github Actions. If the project is reactivated or the code needs to be changed you should migrate the CI-steps to Github Actions.
+
 ## Usage
 
 Any flash messages set in ajax responses fire a `glow:flash`
